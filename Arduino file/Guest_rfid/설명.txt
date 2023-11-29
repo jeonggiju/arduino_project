@@ -1,0 +1,9 @@
+Serial.print(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " "): 이 부분은 현재 바이트가 0x10 미만인 경우 "0 "을 출력하고, 그렇지 않은 경우 공백을 출력합니다. 이 부분은 출력의 가독성을 높이기 위해 사용됩니다.
+
+Serial.print(mfrc522.uid.uidByte[i], HEX): 현재 바이트를 16진수로 출력합니다. 예를 들어, 10진수 값이 13이라면 16진수로는 D가 출력됩니다.
+
+content.concat(String(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " ")): 문자열 변수 content에 현재 바이트의 16진수 표현을 추가합니다. 위에서와 마찬가지로 가독성을 높이기 위해 0x10 미만인 경우 "0 "을 추가합니다.
+
+content.concat(String(mfrc522.uid.uidByte[i], HEX)): 문자열 변수 content에 현재 바이트의 16진수 값을 추가합니다.
+
+MFRC522 RFID 모듈: RFID 카드를 읽고 쓸 수 있는 모듈입니다. 모듈에는 SS (Slave Select) 및 RST (Reset) 핀이 있습니다.	
